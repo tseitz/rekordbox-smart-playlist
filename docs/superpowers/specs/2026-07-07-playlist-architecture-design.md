@@ -120,6 +120,8 @@ Every leaf is `<Context tag> AND <lens tag(s)>`, with a global
 ```
 Nighttime/
 ├── All                                    [Nighttime]
+├── Flow/                                   ← set-position lens (top level only)
+│    └── Openers · Beginning · Middle · End · Closers      (5)
 ├── Genre/                                  ← all-caliber genre lens
 │    └── House · Dub · DnB · UKG · Jungle · Riddim ·
 │        Dubstep · Beats · Feels · Vibes · Weapons        (11)
@@ -156,27 +158,30 @@ My Set/                                     ← global S-tier browse
 
 | Block | Contents | Leaves |
 |---|---|---|
+| **F** — Flow lens | Openers · Beginning · Middle · End · Closers | 5 |
 | **G** — Genre lens | 11 genres | 11 |
 | **TF** — Texture full | 6 singles + Palate Cleanser + ~10 combos | 17 |
-| **TL** — Texture light | 6 singles | 6 |
+| **TL** — Texture light | 6 singles + Palate Cleanser | 7 |
 
-- **Full context** = `All(1) + G(11) + TF(17) + MySet[1+G+TF=29] + Rotation[1+G+TL=18]` = **76**
-- **My Set (global)** = `All(1) + G(11) + TF(17)` = **29**
+- **Full context** = `All(1) + F(5) + G(11) + TF(17) + MySet[1+G+TF=29] + Rotation[1+G+TL=19]` = **82**
+- **My Set (global)** = `All(1) + F(5) + G(11) + TF(17)` = **34**
+
+Flow is a top-level lens only — it is *not* nested inside the caliber sub-trees.
 
 ## Budget
 
 | Piece | Each | Count | Leaves |
 |---|---|---|---|
-| Uniform contexts (8 time + Crispy + Missy + B2B + Silent Disco) | 76 | 12 | 912 |
-| My Set (global base) | 29 | 1 | 29 |
-| Global Genres (w/ sub-styles) | ~66 | 1 | 66 |
-| Go Through | ~5 | 1 | 5 |
-| **Library total** | | | **~1,012** |
+| Uniform contexts (8 time + Crispy + Missy + B2B + Silent Disco) | 82 | 12 | 984 |
+| My Set (global base) | 34 | 1 | 34 |
+| Global Genres (sub-styles only) | ~66 | 1 | 66 |
+| Go Through | ~3 | 1 | 3 |
+| **Library total** | | | **~1,087** |
 
 Folder nodes push the raw total slightly higher, so the full library sits just
 over the 1000 mark — acceptable because the 1000 limit is **per-sync, not
 per-library**. A representative gig sync (e.g. Late Night + Crispy Speakers +
-My Set global) is ~180 playlists.
+My Set global) is ~200 playlists.
 
 ### Trim levers (not needed now)
 
@@ -200,19 +205,28 @@ and operators. The redesign is mostly a **data restructure**, not a code rewrite
   `mainConditions` of a nested sub-tree that itself reuses **G** and **TF/TL**.
 - **PALATE CLEANSER** appears once inside the texture block, never doubled.
 
-## Open details to resolve during implementation
+## Resolved decisions (during planning, 2026-07-08)
 
-1. **Flow-position tags** (`Openers / Beginning / Middle / End / Closers`) exist
-   in the current base but have no home in the new model. Candidates: a light
-   "Flow" lens, fold into rating sort, or drop. **Decide during planning.**
-2. **Exact curated `Combos/` list** — which texture pairs are worth materializing
+1. **Flow-position tags** → **Flow lens per context**, top level only (parallel
+   to Genre/Texture), *not* nested in caliber sub-trees. Block **F** (5 leaves).
+2. **Global Genres depth** → **sub-styles only** (genre → its sub-styles; genres
+   with none get just `All`). No texture drill-down in the Genres tree.
+
+## Open details still to resolve during implementation
+
+1. **Exact curated `Combos/` list** — which texture pairs are worth materializing
    (not all 15). Start from the pairs actually reached for.
-3. **Genre sub-style depth** in the global Genres tree — port from existing
-   `genres/*.json` (e.g. Dub Doubles/Wobblers/Sound System/Slimzee/Reggae).
-4. **`_order.json` / ordering** — confirm top-level context ordering for the
-   Rekordbox sidebar.
-5. Fate of `old/`, `templates/show.json`, `genres.json` vs new `Genres` tree —
-   archive or delete duplicates.
+2. **Genre sub-style content** — port from existing `genres/*.json`
+   (e.g. Dub Doubles/Wobblers/Sound System/Slimzee/Reggae). Genres with no
+   defined sub-styles get just `All`.
+3. **`_order.json` / ordering** — top-level context ordering for the Rekordbox
+   sidebar (My Set first, time-situations by arc, then Crispy/Missy/B2B/Silent
+   Disco, then Genres, then Go Through).
+4. **Cleanup** — delete now-unreferenced legacy files: old texture helpers
+   (`helpers/deep.json` etc.), old mixed `helpers/_base.json`, top-level
+   `rotation.json` (Rotation is now nested caliber), `templates/show.json`
+   (dead), and the texture-mirror `genres/_base.json`. `old/` is left as-is
+   (not processed — directory glob is non-recursive).
 
 ## Non-goals
 
