@@ -80,12 +80,13 @@ set — adjust to the combos actually reached for.*
 ### Genre — what it IS ✅ (texture-blind)
 `Beats`, `DnB`, `Dub`, `Dubstep`, `Feels`, `House`, `Jungle`, `Riddim`, `UKG`, `Vibes`, `Weapons`
 
-Meanings needing confirmation:
-- **Weapons** ❓ — *what is this?* Inferred: a catch-all for "killer/secret-weapon" tracks
-  regardless of genre. It's a genre-*lens* filter only (present in every context) but is
-  **excluded from the global Genres tree** (it has no sub-styles). **Please confirm.**
-- **Feels** ❓ — inferred: emotional / melodic / in-your-feelings tracks. **Confirm.**
-- **Vibes** ❓ — inferred: general good-vibes / groove tracks. **Confirm.**
+Meanings:
+- **Weapons** ✅ — killers, every time. The best of the best, regardless of genre. It's a
+  genre-*lens* filter only (present in every context) but is **excluded from the global
+  Genres tree** (it's a caliber-flavored catch-all, not a genre with sub-styles).
+- **Feels** ✅ — dreamier, usually melodic songs.
+- **Vibes** ✅ — heavier but generally good-vibes tracks you can dance to; often songs you
+  know, remixed.
 - `Beats`, `DnB`, `Dub`, `Dubstep`, `House`, `Jungle`, `Riddim`, `UKG` — standard genres.
 
 ---
@@ -95,10 +96,14 @@ Meanings needing confirmation:
 Genre-first browsing with sub-styles. Only Dub and DnB have sub-styles today; the rest
 show just `All`. `Weapons` is deliberately omitted (see above).
 
-**Dub sub-styles:**
-- `Dub Doubles` ❓ · `Dub Wobblers` ❓ · `Dub Sound System` ❓ · `Dub Slimzee` ❓
-  (Slimzee the grime DJ?) · `Dub Trippy/Interesting` ❓ · `Dub Reggae` ❓
-  — **all inferred; please give one-line meanings.**
+**Dub sub-styles** ✅:
+- `Dub Doubles` — good songs you could double (overlap/mix two copies).
+- `Dub Wobblers` — wubbier songs; the stereotypical dub wobble.
+- `Dub Sound System` — like Crispy Speakers but dub-focused: songs that slap on a big system.
+- `Dub Slimzee` — a particular type of *new* dub; disorienting and crazy.
+- `Dub Trippy/Interesting` — usually lower tempo, interesting to listen to, interesting fill
+  elements — songs that take you on a journey.
+- `Dub Reggae` — the typical "Jamaican Dub" sound; old-school.
 
 **DnB sub-styles** (standard DnB subgenres ✅):
 - `DnB Jump Up` · `DnB Rollers` · `DnB Liquid` · `DnB Dancefloor`
@@ -112,7 +117,11 @@ show just `All`. `Weapons` is deliberately omitted (see above).
 |---|---|
 | **Bad Quality** ✅ | Low audio-quality tracks flagged to review/replace |
 | **Bad Grid** ✅ | Tracks with a bad beatgrid that needs fixing |
-| **Jayden** ❓ | *Unknown — a person? tracks from/for Jayden? a to-review source?* **Confirm.** |
+| **Jayden** ✅ | Cool songs to **show** his nephew Jayden (not yet a DJ) — like Missy, but "show him" rather than "play B2B with." See note below. |
+
+> **Placement note:** `Jayden` currently lives under **Go Through** (the QA/to-do bucket), but
+> conceptually it's a *curated audience pool* like Missy — not a QA task. Consider promoting it
+> to its own light context (or a "People I build for" grouping alongside Missy) in a future pass.
 
 ### `Archive` ✅
 A global exclusion tag. Anything tagged `Archive` is filtered OUT of every playlist
@@ -124,6 +133,7 @@ by rating sort rather than by folders.
 
 ---
 
-## Open confirmations for the DJ
-The ❓ items above — most importantly **Weapons**, **Feels**, **Vibes**, **Jayden**, and the
-**Dub sub-styles** — are inferred and should be corrected here so they're settled for good.
+## Status
+All meanings confirmed with the DJ (2026-07-08). No open ❓ items remain. One structural
+suggestion is parked: `Jayden` may deserve promotion out of Go Through into a curated-pool
+context (see the Go Through placement note).
