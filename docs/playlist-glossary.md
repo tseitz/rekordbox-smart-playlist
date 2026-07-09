@@ -154,10 +154,18 @@ A global exclusion tag. Anything tagged `Archive` is filtered OUT of every playl
 (`negativeConditions`). Use it to retire a track without deleting it.
 
 ### `Dirty` — explicit-content flag ✅
-Marks explicit tracks. Used as a **clean filter** (`doesNotContain`/`negativeConditions`)
-on the family/kid-adjacent spots: the whole of **Pool Party** and **Chillin** exclude
-`Dirty`, and the **Jayden** playlist (nephew) excludes it too. **Franky's Beach** is assumed
-already-clean, so it carries no `Dirty` filter.
+Marks explicit tracks. Exposed as an **opt-in `Clean/` folder** (NOT a context-wide
+exclusion — you can still pull dirty tracks from the normal folders). The Clean folder =
+`All` + the 7 texture singles, each also excluding `Dirty`, built from
+`helpers/lens-clean.json` (a `_texture-singles` base + a `Dirty` negative).
+
+- **Pool Party** and **Chillin** carry a `Clean/` folder.
+- **Jayden** (nephew, in Go Through) is always-clean — a single `doesNotContain: ["Dirty"]`.
+- **Franky's Beach** is assumed already-clean, so it has **no** Clean folder or filter.
+
+Structurally, `Clean/` is an **allowed augmentation**: the audit's `AUGMENTABLE_SUBTREES`
+excludes it from the uniformity check, so all 15 contexts still share an identical 82-leaf
+*core* even though Pool Party/Chillin resolve to 90 leaves.
 
 ### Retired tags ✅ (intentionally gone — don't re-add)
 - **Breaky** → folded into **UKG**.

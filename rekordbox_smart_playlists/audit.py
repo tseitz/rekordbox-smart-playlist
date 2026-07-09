@@ -35,6 +35,11 @@ UNIFORM_CONTEXTS: tuple[str, ...] = (
     "frankys-after",
 )
 
+# Top-level folders that MAY optionally augment a context (e.g. a Clean/ view on
+# kid-friendly contexts) without breaking the uniform-core guarantee. Leaves under
+# these are excluded when comparing contexts for structural uniformity.
+AUGMENTABLE_SUBTREES: tuple[str, ...] = ("Clean",)
+
 
 @dataclass(frozen=True)
 class Leaf:
@@ -156,9 +161,19 @@ def _context_files(directory: Path) -> list[Path]:
     )
 
 
-def _signature(leaves: list[Leaf]) -> tuple:
-    """Structural fingerprint ignoring the root context name (path[0])."""
-    return tuple(sorted((leaf.path[1:], leaf.name) for leaf in leaves))
+def _signature(leaves: list[Leaf], ignore: tuple[str, ...] = ()) -> tuple:
+    """Structural fingerprint ignoring the root context name (path[0]).
+
+    Leaves whose first sub-folder is in ``ignore`` are dropped, so optional
+    augmentations (see ``AUGMENTABLE_SUBTREES``) don't count against uniformity.
+    """
+    return tuple(
+        sorted(
+            (leaf.path[1:], leaf.name)
+            for leaf in leaves
+            if not (len(leaf.path) > 1 and leaf.path[1] in ignore)
+        )
+    )
 
 
 def _check_uniformity(sigs: dict[str, tuple], errors: list[str]) -> None:
@@ -174,7 +189,7 @@ def _check_uniformity(sigs: dict[str, tuple], errors: list[str]) -> None:
     missing = [name for name in UNIFORM_CONTEXTS if name not in sigs]
     distinct = set(present.values())
     if not missing and len(distinct) == 1:
-        print(f"Uniformity: OK ({len(UNIFORM_CONTEXTS)} contexts identical)")
+        print(f"Uniformity: OK ({len(UNIFORM_CONTEXTS)} contexts share an identical core)")
         return
     parts = []
     if len(distinct) > 1:
@@ -197,7 +212,7 @@ def main(argv: list[str] | None = None) -> int:
         res = resolve_context(f, directory)
         total += len(res.leaves)
         errors.extend(res.errors)
-        sigs[f.stem] = _signature(res.leaves)
+        sigs[f.stem] = _signature(res.leaves, ignore=AUGMENTABLE_SUBTREES)
         print(f"{f.name:28s} {len(res.leaves):5d} leaves")
 
     print("-" * 36)

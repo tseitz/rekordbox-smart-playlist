@@ -178,7 +178,14 @@ Flow is a top-level lens only — it is *not* nested inside the caliber sub-tree
 | Light standalone folders (texture-light, 8 each) | 8 | 6 | 48 |
 | Recent Additions (date-based utility) | 4 | 1 | 4 |
 | Go Through | 3 | 1 | 3 |
-| **Library total** | | | **1,339 (as built)** |
+| `Clean/` augmentation (Pool Party, Chillin) | 8 | 2 | 16 |
+| **Library total** | | | **1,355 (as built)** |
+
+> **`Clean/` augmentation:** Pool Party and Chillin carry an opt-in `Clean/` folder
+> (All + texture singles, excluding the `Dirty` tag) so they resolve to 90 leaves,
+> not 82. This is an *allowed augmentation* — `audit.py`'s `AUGMENTABLE_SUBTREES`
+> excludes `Clean/` from the uniformity check, so all 15 contexts still share an
+> identical 82-leaf core. See the glossary's `Dirty` entry.
 
 > **As-built note (updated 2026-07-08):** the implementation lands at **1,335
 > leaves**, verified by `python -m rekordbox_smart_playlists.audit playlist-data`.

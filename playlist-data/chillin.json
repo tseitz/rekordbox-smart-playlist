@@ -6,8 +6,7 @@
         "Chillin"
       ],
       "negativeConditions": [
-        "Archive",
-        "Dirty"
+        "Archive"
       ],
       "playlists": [
         {
@@ -32,6 +31,12 @@
           "operator": 1,
           "playlistType": "folder",
           "link": "helpers/lens-texture.json"
+        },
+        {
+          "name": "Clean",
+          "operator": 1,
+          "playlistType": "folder",
+          "link": "helpers/lens-clean.json"
         },
         {
           "name": "My Set",
