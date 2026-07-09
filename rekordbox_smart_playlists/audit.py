@@ -30,6 +30,9 @@ UNIFORM_CONTEXTS: tuple[str, ...] = (
     "missy",
     "b2b",
     "silent-disco",
+    "frankys-beach",
+    "ketamine-music",
+    "frankys-after",
 )
 
 

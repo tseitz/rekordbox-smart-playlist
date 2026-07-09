@@ -413,7 +413,8 @@ def test_uniform_contexts_are_identical_and_sized():
 
 @pytest.mark.integration
 def test_library_total_is_within_expected_range():
-    total = sum(len(resolve_context(f, PLAYLIST_DATA).leaves)
-                for f in _context_files(PLAYLIST_DATA))
-    # 12*82 (uniform) + My Set 34 + Genres 20 + Go Through 3 = 1041
-    assert 1000 <= total <= 1100, f"unexpected library total: {total}"
+    total = sum(
+        len(resolve_context(f, PLAYLIST_DATA).leaves) for f in _context_files(PLAYLIST_DATA)
+    )
+    # 15*82 (uniform) + My Set 34 + Genres 20 + Go Through 3 + 6*8 (light) = 1335
+    assert 1280 <= total <= 1400, f"unexpected library total: {total}"

@@ -30,12 +30,15 @@ Every leaf playlist is `Context tag AND <lens tag(s)>`, minus anything tagged `A
 |---|---|---|
 | **Daytime** ✅ | Outdoor festivals, day parties | Mid-energy, day/up cluster with Pool Party |
 | **Pool Party** ✅ | Fun, upbeat, crowd-friendly | Day/up cluster |
+| **Franky's Beach** ✅ | Like Pool Party but **kid-friendly** | Franky's & Louie's is a beach bar where his wife plays and he sometimes hops in |
 | **Morningtime Vibes** ✅ | Warm, easy listening, early | Warm/low cluster |
 | **Sunrise** ✅ | Morning sets, comedown | Warm/low cluster |
 | **Chillin** ✅ | Background music, lounge | Warm/low cluster |
 | **Nighttime** ✅ | Club sets, evening | Peak; canonical template context |
 | **Late Night** ✅ | Dark rooms, 2am+ | Peak-dark |
+| **Franky's After** ✅ | Franky's during the **11pm–1am** slot once the kids are gone | The grown-up version of Franky's Beach |
 | **Afterparty** ✅ | Low-key, intimate, late | Where **The Rotation** shines |
+| **Ketamine Music** ✅ | Weird, wonky music | Tag is `Ketamine Music` |
 | **Silent Disco** ✅ | Headphone sets | A *format*, not a time — selection differs |
 | **Crispy Speakers** ✅ | The best tracks for the best speakers | Tracks built to sound huge on a great rig. Dane builds his own systems and enjoys playing nice ones, so these get a dedicated context |
 | **Missy** ✅ | Curated pool for B2B sets with his wife, **Missy** | Songs picked for her vibe |
@@ -48,6 +51,24 @@ Every leaf playlist is `Context tag AND <lens tag(s)>`, minus anything tagged `A
 |---|---|---|
 | **My Set** ✅ | `My Set` | S-tier. The absolute best; the tracks that represent Dane Dubz |
 | **The Rotation** ✅ | `The Rotation` | A-tier, a notch below My Set. Reliable floor-movers you play out at an afterparty "just messing around" — not all absolute bangers, but guaranteed to move the floor or pique interest. Can overlap with My Set |
+
+---
+
+## Light standalone folders
+
+Niche/themed collections that don't warrant the full 82-leaf anatomy. Each is a **flat
+texture-light** folder: `All` + the 7 texture singles (Groovy, Deep, Heavy, Organic, Vocals,
+Weird, Palate Cleanser) = 8 playlists, no genre/flow/caliber. Rarely synced. Built from the
+shared base `helpers/_texture-singles.json`.
+
+| Folder | Meaning |
+|---|---|
+| **Party Hits** ✅ | Sing-along songs, but remixes — like Vibes, but **always has vocals** |
+| **Trippin** ✅ | "Bicycle Day" type vibe (psychedelic) |
+| **LR Friends** ✅ | Songs his **Little Rock** friends will like — usually house/funky |
+| **New Years** ✅ | New Year's songs — usually dreamy, feelsy |
+| **Halloween** ✅ | Halloween songs |
+| **SHADES** ✅ | A particular artist/sound he loves — effectively an **as-yet-undefined genre**; may graduate into the Genre lens later |
 
 ---
 
