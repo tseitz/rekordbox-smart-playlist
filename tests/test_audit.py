@@ -1,9 +1,13 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from rekordbox_smart_playlists.audit import (
     UNIFORM_CONTEXTS,
     Leaf,
+    _context_files,
+    _signature,
     main,
     resolve_context,
 )
@@ -382,3 +386,34 @@ def test_main_one_bad_file_does_not_abort_others(tmp_path: Path, capsys):
     assert "good.json" in out  # the good file was still processed
     assert "1 leaves" in out  # and its single leaf counted
     assert "broken.json" in out  # bad file reported in ERRORS
+
+
+# --- Integration tests over the real playlist-data/ library -----------------
+
+PLAYLIST_DATA = Path(__file__).resolve().parents[1] / "playlist-data"
+
+
+@pytest.mark.integration
+def test_real_library_has_no_broken_links():
+    errors = []
+    for f in _context_files(PLAYLIST_DATA):
+        errors.extend(resolve_context(f, PLAYLIST_DATA).errors)
+    assert errors == [], f"resolution errors: {errors}"
+
+
+@pytest.mark.integration
+def test_uniform_contexts_are_identical_and_sized():
+    sigs = {}
+    for stem in UNIFORM_CONTEXTS:
+        res = resolve_context(PLAYLIST_DATA / f"{stem}.json", PLAYLIST_DATA)
+        assert len(res.leaves) == 82, f"{stem} has {len(res.leaves)} leaves, expected 82"
+        sigs[stem] = _signature(res.leaves)
+    assert len(set(sigs.values())) == 1, "uniform contexts are not structurally identical"
+
+
+@pytest.mark.integration
+def test_library_total_is_within_expected_range():
+    total = sum(len(resolve_context(f, PLAYLIST_DATA).leaves)
+                for f in _context_files(PLAYLIST_DATA))
+    # 12*82 (uniform) + My Set 34 + Genres 20 + Go Through 3 = 1041
+    assert 1000 <= total <= 1100, f"unexpected library total: {total}"
