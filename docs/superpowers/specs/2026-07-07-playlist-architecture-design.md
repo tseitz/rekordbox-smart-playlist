@@ -176,8 +176,9 @@ Flow is a top-level lens only — it is *not* nested inside the caliber sub-tree
 | My Set (global base) | 34 | 1 | 34 |
 | Global Genres (sub-styles only) | 20 | 1 | 20 |
 | Light standalone folders (texture-light, 8 each) | 8 | 6 | 48 |
+| Recent Additions (date-based utility) | 4 | 1 | 4 |
 | Go Through | 3 | 1 | 3 |
-| **Library total** | | | **1,335 (as built)** |
+| **Library total** | | | **1,339 (as built)** |
 
 > **As-built note (updated 2026-07-08):** the implementation lands at **1,335
 > leaves**, verified by `python -m rekordbox_smart_playlists.audit playlist-data`.

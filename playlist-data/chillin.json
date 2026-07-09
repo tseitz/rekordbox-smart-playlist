@@ -6,7 +6,8 @@
         "Chillin"
       ],
       "negativeConditions": [
-        "Archive"
+        "Archive",
+        "Dirty"
       ],
       "playlists": [
         {

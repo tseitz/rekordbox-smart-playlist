@@ -6,7 +6,8 @@
         "Pool Party"
       ],
       "negativeConditions": [
-        "Archive"
+        "Archive",
+        "Dirty"
       ],
       "playlists": [
         {

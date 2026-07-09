@@ -144,9 +144,25 @@ show just `All`. `Weapons` is deliberately omitted (see above).
 > conceptually it's a *curated audience pool* like Missy — not a QA task. Consider promoting it
 > to its own light context (or a "People I build for" grouping alongside Missy) in a future pass.
 
+### Recent Additions ✅ (date-based utility)
+"What have I added lately" — smart playlists filtered by `dateCreated`, not tags:
+`Last 30 Days`, `Last 60 Days`, plus `… Rotation` variants (same window, also tagged
+`The Rotation`). The one place the library uses date filters instead of My Tags.
+
 ### `Archive` ✅
 A global exclusion tag. Anything tagged `Archive` is filtered OUT of every playlist
 (`negativeConditions`). Use it to retire a track without deleting it.
+
+### `Dirty` — explicit-content flag ✅
+Marks explicit tracks. Used as a **clean filter** (`doesNotContain`/`negativeConditions`)
+on the family/kid-adjacent spots: the whole of **Pool Party** and **Chillin** exclude
+`Dirty`, and the **Jayden** playlist (nephew) excludes it too. **Franky's Beach** is assumed
+already-clean, so it carries no `Dirty` filter.
+
+### Retired tags ✅ (intentionally gone — don't re-add)
+- **Breaky** → folded into **UKG**.
+- **Earthy** → folded into **ORGANIC (The Soul)**.
+- **Transition** → folded into **PALATE CLEANSER**.
 
 ### Ratings = Energy ✅ (not quality)
 1★ warmup/ambient → 5★ maximum/headliner. Sortable on all hardware, so energy is handled
