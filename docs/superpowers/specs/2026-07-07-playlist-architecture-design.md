@@ -174,9 +174,17 @@ Flow is a top-level lens only — it is *not* nested inside the caliber sub-tree
 |---|---|---|---|
 | Uniform contexts (8 time + Crispy + Missy + B2B + Silent Disco) | 82 | 12 | 984 |
 | My Set (global base) | 34 | 1 | 34 |
-| Global Genres (sub-styles only) | ~66 | 1 | 66 |
-| Go Through | ~3 | 1 | 3 |
-| **Library total** | | | **~1,087** |
+| Global Genres (sub-styles only) | 20 | 1 | 20 |
+| Go Through | 3 | 1 | 3 |
+| **Library total** | | | **1,041 (as built)** |
+
+> **As-built note (2026-07-08):** the implementation lands at **1,041 leaves**,
+> verified by `python -m rekordbox_smart_playlists.audit playlist-data`. The
+> Genres tree came in at 20 (not the ~66 estimate) because only Dub (6) and DnB
+> (4) currently have sub-styles defined; every other genre has just `All`. Adding
+> sub-styles later grows this. `Weapons` is intentionally a genre-*lens* filter
+> only and is excluded from the sub-style Genres tree (it is a catch-all, not a
+> genre with sub-styles), so the Genres tree has 10 genres vs. the lens's 11.
 
 Folder nodes push the raw total slightly higher, so the full library sits just
 over the 1000 mark — acceptable because the 1000 limit is **per-sync, not
