@@ -30,13 +30,13 @@ Every leaf playlist is `Context tag AND <lens tag(s)>`, minus anything tagged `A
 |---|---|---|
 | **Daytime** ✅ | Outdoor festivals, day parties | Mid-energy, day/up cluster with Pool Party |
 | **Pool Party** ✅ | Fun, upbeat, crowd-friendly | Day/up cluster |
-| **Franky's Beach** ✅ | Like Pool Party but **kid-friendly** | Franky's & Louie's is a beach bar where his wife plays and he sometimes hops in |
+| **Frankys Beach** ✅ | Like Pool Party but **kid-friendly** | Franky's & Louie's is a beach bar where his wife plays and he sometimes hops in. **Tag has no apostrophe:** `Frankys Beach` |
 | **Morningtime Vibes** ✅ | Warm, easy listening, early | Warm/low cluster |
 | **Sunrise** ✅ | Morning sets, comedown | Warm/low cluster |
 | **Chillin** ✅ | Background music, lounge | Warm/low cluster |
 | **Nighttime** ✅ | Club sets, evening | Peak; canonical template context |
 | **Late Night** ✅ | Dark rooms, 2am+ | Peak-dark |
-| **Franky's After** ✅ | Franky's during the **11pm–1am** slot once the kids are gone | The grown-up version of Franky's Beach |
+| **Frankys After** ✅ | Franky's during the **11pm–1am** slot once the kids are gone | The grown-up version of Frankys Beach. **Tag has no apostrophe:** `Frankys After` |
 | **Afterparty** ✅ | Low-key, intimate, late | Where **The Rotation** shines |
 | **Ketamine Music** ✅ | Weird, wonky music | Tag is `Ketamine Music` |
 | **Silent Disco** ✅ | Headphone sets | A *format*, not a time — selection differs |
