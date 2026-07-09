@@ -1,10 +1,21 @@
 {
   "first": [
-    "go-through.json",
     "my-set.json",
-    "rotation.json"
+    "daytime.json",
+    "pool-party.json",
+    "morningtime-vibes.json",
+    "sunrise.json",
+    "chillin.json",
+    "nighttime.json",
+    "late-night.json",
+    "afterparty.json",
+    "silent-disco.json",
+    "crispy-speakers.json",
+    "missy.json",
+    "b2b.json"
   ],
   "last": [
-    "genres.json"
+    "genres.json",
+    "go-through.json"
   ]
 }
