@@ -1,5 +1,8 @@
 # Rekordbox Smart Playlist Tools
 
+> **Moved.** This project now lives in [TuneWrangler](https://github.com/tseitz/TuneWrangler) under
+> `rekordbox/`. This repository is archived.
+
 A collection of Python tools for managing Rekordbox 6 databases, smart playlists, and metadata synchronization. Built for DJs who want to organize large, genre-diverse libraries and generate smart playlists from simple JSON configurations.
 
 ## What This Project Does
